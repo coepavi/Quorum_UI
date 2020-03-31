@@ -1,0 +1,59 @@
+<div class="container custom-container">
+    <div class="col-md-12">
+      <h3 class="mb-3 text-center">Search Trade</h3>
+
+      <div class="form-group">
+        <select [(ngModel)]="tradeDetails.FromParty" class="form-control" placeholder="FromParty">
+          <option value="" disabled selected hidden>Select Your Bank</option>
+          <option value="SBI">SBI</option>
+          <option value="ICICI">ICICI</option>
+          <option value="HDFC">HDFC</option>
+        </select>
+      </div>
+
+      <div class="form-group">
+        <input type="text" [(ngModel)]="tradeDetails.tradeid" class="form-control" placeholder="Trade ID">
+      </div>
+  
+      <div class="form-group">
+        <button class="btn btn-success btn-lg btn-block" (click)="findTrade()">Find</button>
+      </div>
+    </div>
+  </div><br>
+    
+    <div class="container custom-container-2" *ngIf="temp1">
+      <div>
+        <div class="col-md-12">
+        <h5 style="color: red;">Error: Trade id is NOT found! Please enter valid Trade ID</h5>
+      </div>
+      </div>
+    </div>
+          
+    <div class="container custom-container-2" *ngIf="temp">
+      <div class="col-md-12">
+      <div>
+        <table class="table">
+        <thead class="black white-text">
+          <tr>
+            <th scope="col">Trade ID</th>
+            <th scope="col">From Party</th>
+            <th scope="col">To Party</th>
+            <th scope="col">Amount</th>
+            <th scope="col">Trade Date</th>
+            <th scope="col">Status</th>
+          </tr>
+          </thead>
+          <tbody>
+          <tr>
+            <td>{{tradeData[0]}}</td>
+            <td>{{tradeData[1]}}</td>
+            <td>{{tradeData[2]}}</td>
+            <td>{{tradeData[3]}}</td>
+            <td>{{tradeData[4]}}</td>
+            <td>{{tradeData[5]}}</td>
+          </tr>
+          </tbody>
+        </table>
+      </div>
+      </div>
+    </div>    

@@ -1,0 +1,63 @@
+<div class="container custom-container-2">
+
+  
+  <!-- Employees list table, it hides when there is no employee -->
+  <div class="col-md-12">
+    <table class="table table-bordered">
+      <thead>
+        <tr>
+          <th scope="col">Trade ID</th>
+          <th scope="col">From Party</th>
+          <th scope="col">To Party</th>
+          <th scope="col">Amount</th>
+          <th scope="col">Trade Date</th>
+          <th scope="col">Trade Status</th>
+          <th scope="col">Flag</th>
+        </tr>
+      </thead>
+    </table>
+  </div>
+<div class="col-md-12" *ngIf="Trade.length !== 0">
+  <div *ngFor="let trade of Trade">
+    <span *ngFor="let secondlevel of trade">
+      <tbody>
+      <td>{{secondlevel}}</td>
+    </tbody>
+    </span>
+  </div>
+
+    <!-- <div *ngIf="Trade.length !== 0">
+    <h3 class="mb-3 text-center">Trade List</h3>
+
+    <div class="col-md-12">
+      <table class="table table-bordered">
+        <thead>
+          <tr>
+            <th scope="col">Trade ID</th>
+            <th scope="col">From Party</th>
+            <th scope="col">To Party</th>
+            <th scope="col">Amount</th>
+            <th scope="col">Trade Date</th>
+            <th scope="col">Status</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let trade of Trade">
+            <span *ngFor="let secondlevel of trade">
+            <td>{{secondlevel}}</td>
+            <td>{{secondlevel}}</td>
+            <td>{{secondlevel}}</td>
+            <td>{{secondlevel}}</td>
+            <td>{{secondlevel}}</td>
+            <td>{{Trade[5]}}</td> -->
+            <!-- </span>
+        </tbody>
+      </table>
+    </div> -->
+    <!-- <div class="form-group">
+      <button class="btn btn-success btn-lg btn-block" (click)="listTrades()">View All Trades</button>
+    </div> -->
+</div>
+
+</div>
+<!-- v-asset.component.ts -->
